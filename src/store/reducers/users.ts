@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import api from '@/services/api';
+import { api } from '@/services/api';
 import { RootState } from '@/store/rootReducer';
 
 export interface IUser {
+  id: string;
   name: string;
   age: number;
 }

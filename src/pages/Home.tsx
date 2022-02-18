@@ -1,19 +1,18 @@
 import { Button, Typography } from '@mui/material';
 
-import Layout from '@/components/Layout';
-import useThemeColorMode from '@/hooks/useThemeColorMode';
+import { Head } from '@/components/Head';
+import { useAppTheme } from '@/hooks/useAppTheme';
 
-function Home() {
-  const colorMode = useThemeColorMode();
+export function Home() {
+  const appTheme = useAppTheme();
 
   return (
-    <Layout>
+    <>
+      <Head title="Home" />
       <Typography sx={{ mb: 5 }}>Hi! Welcome to Home Page :)</Typography>
-      <Button variant="contained" onClick={colorMode.toggleColorMode}>
+      <Button variant="contained" onClick={appTheme.toggleColorMode}>
         Toggle Color Mode
       </Button>
-    </Layout>
+    </>
   );
 }
-
-export default Home;

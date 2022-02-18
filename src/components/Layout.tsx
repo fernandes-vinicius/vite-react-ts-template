@@ -1,11 +1,7 @@
-import { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
-type LayoutProps = {
-  children: ReactNode;
-};
 
 const StyledContainer = styled(Container)({
   height: '100vh',
@@ -16,10 +12,10 @@ const StyledContainer = styled(Container)({
   textAlign: 'center',
 });
 
-function Layout(props: LayoutProps) {
-  const { children } = props;
-
-  return <StyledContainer maxWidth="sm">{children}</StyledContainer>;
+export function Layout() {
+  return (
+    <StyledContainer maxWidth="sm">
+      <Outlet />
+    </StyledContainer>
+  );
 }
-
-export default Layout;
